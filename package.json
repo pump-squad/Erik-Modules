@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "nodemon",
-    "seed": "node ./navAndSearchBar/database.seed.js",
+    "seed": "node ./navAndSearchBar/database/seed.js",
     "build": "webpack -d --watch"
   },
   "dependencies": {

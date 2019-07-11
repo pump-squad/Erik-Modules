@@ -1,11 +1,12 @@
 import React from 'react';
 import getProducts from '../lib/getProductsAndCounts.js';
+import SearchBar from './SearchBar.jsx';
+import SearchResults from './SearchResults.jsx';
 
-
-class App extends React.Component  {
-  constructor (props) {
-    super(props)
-    this.state ={
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       products: [],
       filters: {},
       counts: {}
@@ -15,7 +16,7 @@ class App extends React.Component  {
 
   search(term) {
     getProducts(term)
-      .then(({products, filters, counts})=> {
+      .then(({ products, filters, counts }) => {
         this.setState({
           products,
           filters,
@@ -28,9 +29,12 @@ class App extends React.Component  {
 
   }
 
-  render () {
+  render() {
     return (
-      <div>React Workin'</div>
+      <div className="search">
+        <SearchBar search={this.search} />
+        <SearchResults products={this.state.products} filter={this.state.filters} counts={this.state.counts} />
+      </div>
     )
   }
 

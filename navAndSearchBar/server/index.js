@@ -6,6 +6,7 @@ const port = process.env.PORT || 3072;
 const app = express();
 
 app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname));
 app.use('/api', router);
 
 
