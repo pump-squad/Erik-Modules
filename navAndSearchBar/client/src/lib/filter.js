@@ -18,6 +18,7 @@ const filter = (products = [], config = {}) => {
     }
     pass = true;
   }
+  console.log(results);
   return results;
 };
 

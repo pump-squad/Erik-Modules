@@ -1,5 +1,4 @@
 import React from 'react';
-import filter from '../lib/filter.js';
 import SearchItem from '../components/SearchItem.jsx';
 
 class SearchResults extends React.Component {

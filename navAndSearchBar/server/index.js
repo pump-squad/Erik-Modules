@@ -6,7 +6,7 @@ const port = process.env.PORT || 3072;
 const app = express();
 
 app.use(express.static(__dirname + '/../client/dist'));
-app.use(express.static(__dirname));
+app.use('/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/', express.static('/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/'))
 app.use('/api', router);
 
 

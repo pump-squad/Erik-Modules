@@ -1,0 +1,231 @@
+/* Reset Margins */
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+
+/* CSS */
+.header {
+  border-bottom: 1px solid #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(204, 204, 204);
+  width: 100%;
+  height: 100px;
+  margin-bottom: 0;
+  z-index: 991;
+  position: relative;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+
+.logo {
+  top: 10px;
+  float: left;
+  position: relative;
+  margin-left: 4%;
+}
+
+#logoImg {
+  height: 92px;
+}
+
+
+.buttons {
+  float: right; 
+  top: 50%;
+  position: relative;
+  margin-right: 6%;
+}
+
+.searchButton {
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.glass {
+  margin-left: 10px;
+}
+
+.flag {
+  position: relative;
+  top: 6px;
+  left: 10px;
+}
+
+.search {
+  padding: 2em 1em;
+}
+
+.filters {
+  position: relative;
+  float:left;
+}
+
+.searchContainer {
+  display: block;
+  width: 90%;
+  padding: 1em 0;
+  margin: auto;
+}
+
+.searchField {
+  display: inline-block;
+  border: 1px solid #b3b3b3;
+  font-size: 26px;
+  width: 75%;
+  padding: 0;
+  height: 38px;
+  text-indent: 10px;
+  cursor: text;
+}
+
+.searchEnd {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  color: #000;
+  font-size: 15px;
+  border: #b3b3b3 solid 1px;
+  border-radius: 0 3px 3px 0;
+  background: #f2f2f2;
+  padding: 11px;
+  padding-top:12px;
+}
+
+.searchClose {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  margin: 10px 0 5px 10px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.filterCategory {
+  text-transform: uppercase;
+  color: #808080;
+  font-size: 13px;
+  padding-bottom: 1em;
+}
+
+.filterList {
+  line-height: 1.5em;
+  color: #000;
+}
+
+.individualFilter {
+  padding: 2px 9px 6px;
+}
+
+input:focus{
+  outline: none;
+}
+
+.product {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+
+.productImage {
+  width: 162px;
+  height: 205px;
+}
+
+.colorBlock {
+  display:inline-block;
+  text-indent:100%;
+  white-space:nowrap;
+  width:14px;
+  height:14px;
+  margin:0 2px 6px;
+  overflow:hidden;
+}
+
+.results {
+  font-weight: 600;
+  min-height: 75vh;
+  font-size: 13px;
+  line-height: 1.5em;
+  color: #000;
+  padding: 1em 0;
+}
+
+.review {
+  background: url(/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingEmpty.gif);
+  background-repeat: no-repeat;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 110px;
+  margin: 0 auto;
+}
+
+.productRating {
+  background: url(/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingFull.gif);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display:block;
+}
+
+.numReviews {
+  float: right;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  top: 50%;
+  position:relative;
+  display: inline-block;
+}
+
+.navBar {
+  list-style-type: none;
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  padding-left: 20px;
+}
+
+.navOption {
+  display: inline-block;
+  padding: 6px 20px 22px;
+  text-decoration: none;
+}
+
+.navOptionText {
+  text-decoration: none;
+  color: #333333;
+}
+
+.navOptionText:hover {
+  color:black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
