@@ -6,6 +6,7 @@ mongoose.connect(uri, {useNewUrlParser: true});
 
 let productSchema = mongoose.Schema({
   name: String,
+  price: String,
   category: String,
   gender: String,
   image: String,
