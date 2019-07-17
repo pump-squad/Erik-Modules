@@ -6,6 +6,7 @@ import Filters from './Filters.jsx';
 import Navbar from './Navbar.jsx';
 import Buttons from './HeaderButtons.jsx';
 
+
 import filter from '../lib/filter.js';
 import counter from '../lib/countInEachCategory.js';
 import filterMaker from '../lib/filterMaker.js';
@@ -18,10 +19,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
+      filteredProducts: [],
       filters: {},
       counts: {},
       searchOpen: false,
-      searchActive: false
+      searchActive: false,
     };
     this.search = this.search.bind(this);
     this.openSearch = this.openSearch.bind(this);
@@ -34,6 +36,7 @@ class App extends React.Component {
     getProducts(term)
       .then(({ products, filters, counts }) => {
         this.setState({
+          filteredProducts: products,
           products,
           filters,
           counts
@@ -64,11 +67,12 @@ class App extends React.Component {
     var newFilters = filterMaker(filteredProducts);
     var newCounts = counter(filteredProducts, newFilters);
     this.setState({
-      products: filteredProducts,
+      filteredProducts,
       filters: newFilters,
       counts: newCounts
     })
   }
+
 
   render() {
     return (
@@ -78,17 +82,17 @@ class App extends React.Component {
             <img id="logoImg" src={path + "/Assets/logo.png"}></img>
           </div>
           <nav className="navBar">
-            <Navbar />
+            <Navbar showDropdown={this.showDropdown} hideDropdown={this.hideDropdown} />
           </nav>
-          <Buttons openSearch={this.openSearch}/>
+          <Buttons openSearch={this.openSearch} />
         </div>
-        {this.state.searchOpen ? 
-        <div className="search">
-          <SearchBar activateSeach={this.activateSearch} closeSearch={this.closeSearch} search={this.search} />
-          <Filters filterProducts={this.filterProducts} searchActive={this.state.searchActive} products={this.state.products} filters={this.state.filters} counts={this.state.counts} />
-          <SearchResults products={this.state.products} />
-        </div>
-        : null}
+        {this.state.searchOpen ?
+          <div className="search">
+            <SearchBar activateSeach={this.activateSearch} closeSearch={this.closeSearch} search={this.search} />
+            <Filters filterProducts={this.filterProducts} searchActive={this.state.searchActive} products={this.state.products} filters={this.state.filters} counts={this.state.counts} />
+            <SearchResults products={this.state.filteredProducts} />
+          </div>
+          : null}
       </div>
     )
   }

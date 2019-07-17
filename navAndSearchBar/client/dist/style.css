@@ -4,6 +4,11 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 /* CSS */
 .header {
@@ -65,6 +70,14 @@ body {
   float:left;
 }
 
+.activeFilter {
+  font-weight: bold;
+}
+
+.removeFilter {
+  font-size: 10px;
+}
+
 .searchContainer {
   display: block;
   width: 90%;
@@ -82,6 +95,7 @@ body {
   text-indent: 10px;
   cursor: text;
 }
+
 
 .searchEnd {
   display: inline-block;
@@ -119,6 +133,8 @@ body {
 
 .individualFilter {
   padding: 2px 9px 6px;
+  cursor: pointer;
+  display: table;
 }
 
 input:focus{
@@ -180,20 +196,20 @@ input:focus{
   float: right;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  top: 50%;
-  position:relative;
-  display: inline-block;
-}
-
 .navBar {
   list-style-type: none;
   display: inline-block;
   width: auto;
   height: 100%;
   padding-left: 20px;
+}
+
+.navBar ul {
+  padding: 0;
+  margin: 0;
+  top: 50%;
+  position:relative;
+  display: inline-block;
 }
 
 .navOption {
@@ -211,21 +227,36 @@ ul {
   color:black;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
+.dropdownContainer {
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
+  display: block;
+  width: 100%;
+  left: 0;
+  margin-top: 1px;
+  z-index: 10;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown {
+  width: 88%;
+  background: white;
+  font-size: 13px;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2em auto;
+
+}
+
+.dropdown ul {
+  list-style-type: none;
+}
+
+.dropItem {
+  padding: 10px 0;
+  font-weight: 400;
+}
+
+.dropMenuTitle {
+  font-weight: 900;
 }
