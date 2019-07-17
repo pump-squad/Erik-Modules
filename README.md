@@ -37,3 +37,14 @@ npm install -g webpack
 npm install
 ```
 
+
+
+### HOW TO RUN 
+
+npm install
+npm run seed
+npm run build
+npm start
+go to localhost:3072
+
+NOTE: No images will load since I'm still loading them locally.
