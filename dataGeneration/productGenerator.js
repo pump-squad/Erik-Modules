@@ -1776,7 +1776,7 @@ const NumOfRatings = [
 ];
 
 
-const Materials = [
+const materials = [
   "Breathable ",
   "GORE-TEX ",
   "Synthetic Fibre ",
@@ -3730,6 +3730,18 @@ const colorGen = () => {
   return prodColors;
 }
 
+const materialGen = () => {
+  var prodMaterials = [];
+  var amount = Math.floor(Math.random() * Math.floor(2)) + 1;
+  for (var i = 0; i < amount; i++) {
+    var newMaterial = materials[Math.floor(Math.random() * Math.floor(materials.length - 1))];
+    if (!prodMaterials.includes(newMaterial)) {
+      prodMaterials.push(newMaterial);
+    }
+  }
+  return prodMaterials;
+}
+
 const activityGen = () => {
   var prodActivities = [];
   var amount = Math.floor(Math.random() * Math.floor(2)) + 1;
@@ -3788,6 +3800,7 @@ for (var i = 0; i < mensProductNames.length; i++) {
   product.numRatings = NumOfRatings[i];
   product.colors = colorGen();
   product.activities = activityGen();
+  product.materials = materialGen();
   products.push(product);
 }
 
@@ -3801,6 +3814,7 @@ for (var i = 0; i < womensProductNames.length; i++) {
   product.numRatings = NumOfRatings[i];
   product.colors = colorGen();
   product.activities = activityGen();
+  product.materials = materialGen();
   products.push(product);
 }
 
