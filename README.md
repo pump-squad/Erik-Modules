@@ -22,11 +22,11 @@
 # How to Run 
 Navigate to ROOT of this directory in your terminal and then run the following commands...
 
->npm install
->npm run dataGen
->npm run seed
->npm run build
->npm start
+>npm install . 
+>npm run dataGen . 
+>npm run seed . 
+>npm run build . 
+>npm start  
 
 Then open your browser and go to localhost:2001
 
