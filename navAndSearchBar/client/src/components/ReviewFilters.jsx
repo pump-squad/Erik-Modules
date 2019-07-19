@@ -5,7 +5,7 @@ import React from 'react';
 
 
 
-class FilterItems extends React.Component {
+class ReviewFilters extends React.Component {
 
   constructor(props) {
     super(props);
@@ -63,13 +63,19 @@ class FilterItems extends React.Component {
           if (this.state.active.includes(filter)) {
             return (
               <div key={i} onClick={this.handleClick} className="individualFilter activeFilter">
-                {filter} ({this.props.counts[filter]}) <i className="removeFilter fas fa-times"></i>
+                <div className="stars" style={{ width: filter + "%" }}>
+                  <img src="/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingFull.gif"></img>
+                  {filter} ({this.props.counts[filter]}) <i className="removeFilter fas fa-times"></i>
+                </div>
               </div>
             )
           } else {
             return (
               <div key={i} onClick={this.handleClick} className="individualFilter">
-                {filter} ({this.props.counts[filter]})
+                <div className="stars" style={{ width: filter + "%" }}>
+                  <img src="/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingFull.gif"></img>
+                  {filter} ({this.props.counts[filter]})
+                </div>
               </div>
             )
           }
@@ -86,4 +92,5 @@ class FilterItems extends React.Component {
   }
 }
 
-export default FilterItems;
+export default ReviewFilters;
+

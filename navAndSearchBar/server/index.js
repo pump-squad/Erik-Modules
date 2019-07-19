@@ -1,7 +1,7 @@
 const express = require('express');
 const router = require('./router.js');
 
-const port = process.env.PORT || 3072;
+const port = process.env.PORT || 2001;
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use('/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/', express.static('/User
 app.use('/api', router);
 
 
-app.listen(port, () => console.log("Listening on 3072, smooth jazz"));
+app.listen(port, () => console.log(`Listening on ${port}, smooth jazz`));
 
 
 

@@ -95,7 +95,7 @@ class App extends React.Component {
             <SearchBar activateSeach={this.activateSearch} closeSearch={this.closeSearch} search={this.search} />
             <div className="results-filters">
               <Filters filterProducts={this.filterProducts} searchActive={this.state.searchActive} products={this.state.products} filters={this.state.filters} counts={this.state.counts} />
-              <SearchResults products={this.state.filteredProducts} />
+              <SearchResults active={this.state.searchActive} products={this.state.filteredProducts} />
             </div>
           </div>}
       </div>

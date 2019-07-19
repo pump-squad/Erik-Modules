@@ -19,10 +19,14 @@ class SearchResults extends React.Component {
 
 
   render() {
-    var first50 = this.props.products.slice(0, 24);
+    var first24 = this.props.products.slice(0, 24);
     return (
       <div className="results">
-        {first50.map((product, i) => (
+        {this.props.active ?
+          <div className="searchPrompt">{this.props.products.length} Results found</div>
+          :
+          <div className="searchPrompt"> Start Typing to Search for Products</div>}
+        {first24.map((product, i) => (
           <SearchItem product={product} key={i} />
         ))}
       </div>
