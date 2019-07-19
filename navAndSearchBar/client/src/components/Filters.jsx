@@ -2,7 +2,8 @@
 
 import React from 'react';
 import FilterItems from './FilterItems.jsx';
-
+import ColorFilters from './ColorFilters.jsx';
+import ReviewFilters from './ReviewFilters.jsx';
 
 class Filters extends React.Component {
   constructor(props) {
@@ -57,24 +58,43 @@ class Filters extends React.Component {
     })
   }
 
-  render() {  
-   return ( 
+  render() {
+    return (
       <div className="filters">
         {Object.keys(this.props.filters).map((category, i) => (
           <div className="filterCategory" key={i}>
-            {category}
-            <FilterItems 
-              activeFilters={this.state.config} 
-              addFilter={this.addFilter} 
-              removeFilter={this.removeFilter}
-              category={category} 
-              filters={this.props.filters[category]} 
-              counts={this.props.counts}
-            />
+            {category !== "reviews" && category}
+            {category === "colors" ?
+              <ColorFilters
+                activeFilters={this.state.config}
+                addFilter={this.addFilter}
+                removeFilter={this.removeFilter}
+                category={category}
+                filters={this.props.filters[category]}
+                counts={this.props.counts}
+              />
+              : category === "reviews" ?
+                /* <ReviewFilters
+                  activeFilters={this.state.config}
+                  addFilter={this.addFilter}
+                  removeFilter={this.removeFilter}
+                  category={category}
+                  filters={this.props.filters[category]}
+                  counts={this.props.counts} 
+                />*/
+                null
+                : <FilterItems
+                  activeFilters={this.state.config}
+                  addFilter={this.addFilter}
+                  removeFilter={this.removeFilter}
+                  category={category}
+                  filters={this.props.filters[category]}
+                  counts={this.props.counts}
+                />}
           </div>
         ))}
       </div>
-   );  
+    );
   }
 }
 export default Filters;
