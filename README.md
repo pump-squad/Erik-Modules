@@ -1,4 +1,4 @@
-# Project Name
+# Arc'teryx Navbar with Search
 
 > With this application we've created a clone of the 
 Arc'teryx product page. Our goal was to mimic the look
