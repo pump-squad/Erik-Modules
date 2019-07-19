@@ -7,38 +7,50 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false,
-      menu: ""
+      showOverlay: false
     }
-    this.showDropdown=this.showDropdown.bind(this);
-    this.hideDropdown=this.hideDropdown.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseExit = this.handleMouseExit.bind(this);
   }
 
-  showDropdown(e) {
-    var menu = e.target.innerText;
+  handleMouseEnter() {
     this.setState({
-      showMenu: true,
-      menu
+      showOverlay: true
     })
   }
 
-  hideDropdown() {
+  handleMouseExit() {
     this.setState({
-      showMenu: false
+      showOverlay: false
     });
   }
 
   render() {
     return (
-    <ul onMouseLeave={this.hideDropdown}>
-      <li className="navOption" onMouseEnter={this.showDropdown}><a className="navOptionText" href="/c/mens">MENS</a></li>
-      <li className="navOption" onMouseEnter={this.showDropdown} ><a className="navOptionText" href="/c/mens">WOMENS</a></li>
-      <li className="navOption" onMouseEnter={this.showDropdown} ><a className="navOptionText" href="/c/mens">EXPLORE</a></li>
-      {this.state.showMenu && this.state.menu === "MENS" && <MensDropdown/>}
-      {this.state.showMenu && this.state.menu === "WOMENS" && <WomensDropdown/>}
-      {this.state.showMenu && this.state.menu === "EXPLORE" && <ExploreDropdown/>}
-     </ul>
-    )}
+      <ul className="navBar">
+        <li className="navOption" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseExit}>
+          <a className="navOptionText" href="/c/mens">MENS</a>
+          <div className="dropdown-container">
+            <MensDropdown />
+          </div>
+        </li>
+        <li className="navOption" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseExit}>
+          <a className="navOptionText" href="/c/mens">WOMENS</a>
+          <div className="dropdown-container">
+            <WomensDropdown />
+          </div>
+        </li>
+        <li className="navOption" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseExit}>
+          <a className="navOptionText" href="/c/mens">EXPLORE</a>
+          <div className="dropdown-container">
+            <ExploreDropdown />
+          </div>
+        </li>
+        {this.state.showOverlay && <div className="fade-content"></div>}
+      </ul>
+
+    );
+  }
 }
 
 export default Navbar;

@@ -78,21 +78,26 @@ class App extends React.Component {
     return (
       <div className="app">
         <div className="header">
-          <div className="logo">
-            <img id="logoImg" src={path + "/Assets/logo.png"}></img>
+          <div className="header-content">
+            <div className="header-left">
+              <div className="logo">
+                <img id="logoImg" src={path + "/Assets/logo.png"}></img>
+              </div>
+              <Navbar showDropdown={this.showDropdown} hideDropdown={this.hideDropdown} />
+            </div>
+            <div className="header-right">
+              <Buttons searchOpen={this.state.searchOpen} openSearch={this.openSearch} />
+            </div>
           </div>
-          <nav className="navBar">
-            <Navbar showDropdown={this.showDropdown} hideDropdown={this.hideDropdown} />
-          </nav>
-          <Buttons openSearch={this.openSearch} />
         </div>
-        {this.state.searchOpen ?
+        {this.state.searchOpen &&
           <div className="search">
             <SearchBar activateSeach={this.activateSearch} closeSearch={this.closeSearch} search={this.search} />
-            <Filters filterProducts={this.filterProducts} searchActive={this.state.searchActive} products={this.state.products} filters={this.state.filters} counts={this.state.counts} />
-            <SearchResults products={this.state.filteredProducts} />
-          </div>
-          : null}
+            <div className="results-filters">
+              <Filters filterProducts={this.filterProducts} searchActive={this.state.searchActive} products={this.state.products} filters={this.state.filters} counts={this.state.counts} />
+              <SearchResults products={this.state.filteredProducts} />
+            </div>
+          </div>}
       </div>
     )
   }
