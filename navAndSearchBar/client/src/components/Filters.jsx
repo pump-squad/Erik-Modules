@@ -70,7 +70,6 @@ class Filters extends React.Component {
               category={category} 
               filters={this.props.filters[category]} 
               counts={this.props.counts}
-
             />
           </div>
         ))}

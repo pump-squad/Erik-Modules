@@ -19,9 +19,10 @@ class SearchResults extends React.Component {
 
 
   render() {
+    var first50 = this.props.products.slice(0, 24);
     return (
       <div className="results">
-        {this.props.products.map((product, i) => (
+        {first50.map((product, i) => (
           <SearchItem product={product} key={i} />
         ))}
       </div>
