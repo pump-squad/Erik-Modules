@@ -5,14 +5,13 @@ import SearchResults from './SearchResults.jsx';
 import Filters from './Filters.jsx';
 import Navbar from './Navbar.jsx';
 import Buttons from './HeaderButtons.jsx';
-
+import path from '../lib/path.js';
 
 import filter from '../lib/filter.js';
 import counter from '../lib/countInEachCategory.js';
 import filterMaker from '../lib/filterMaker.js';
 
-const path = "/Users/erikgrubbs/hackReactor/Arc/Erik-Modules" // local
-// https://arcteryxsearchclone.s3-us-west-1.amazonaws.com // s3
+
 
 class App extends React.Component {
   constructor(props) {
@@ -76,7 +75,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="application">
         <div className="header">
           <div className="header-content">
             <div className="header-left">
