@@ -476,6 +476,8 @@ input:focus {
 }
 
 .contact p {
+  text-align: left;
+  line-height: 1;
   font-weight: 400;
   margin: 0;
   padding: 5px 0px;

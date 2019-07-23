@@ -23,7 +23,7 @@ const filter = (products = [], config = {}) => {
 
 
 
-
+// module.exports = filter;
 export default filter;
 
 
