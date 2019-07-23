@@ -20,9 +20,8 @@ const SearchItem = ({ product }) => {
       </div>
       <div className="review">
         <div className="stars-container">
-          {/* <img src="/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingEmpty.gif"></img> */}
           <div className="stars" style={{ width: product.rating + "%" }}>
-            <img src="/Users/erikgrubbs/hackReactor/Arc/Erik-Modules/Assets/ratingFull.gif"></img>
+            <img src="https://arcteryxsearchclone.s3-us-west-1.amazonaws.com/Assets/ratingFull.gif"></img>
           </div>
         </div>
         <span className="numReviews">{numOfRatings}</span>
