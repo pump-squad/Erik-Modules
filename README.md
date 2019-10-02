@@ -1,5 +1,7 @@
 # Arc'teryx Navbar with Search
 
+<img src="https://media.giphy.com/media/lsAeMj3YLei0QnuqQY/giphy.gif"/>
+
 > With this application we've created a clone of the 
 Arc'teryx product page. Our goal was to mimic the look
 and feel of the website while improving it's function
